@@ -19,7 +19,7 @@ function WelcomeScreen(props) {
         <FlatGrid
                 itemDimension={200}
                 spacing={10}
-                data={[1,2,3,4,5,6]}
+                data={[1,2,3,4,5,"Hello World"]}
                 renderItem={({ item }) => (
                     <View style={styles.gridView}>
                         <Text>{item}</Text>
