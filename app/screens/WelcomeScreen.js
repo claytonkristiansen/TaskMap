@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, View, StyleSheet, Button, Alert, Text } from 'react-native';
+import { ImageBackground, View, SafeAreaView, StyleSheet, Button, Alert, Text } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
 function WelcomeScreen(props) {
@@ -16,16 +16,19 @@ function WelcomeScreen(props) {
         //         <Text onPress={handlePress}>Hello</Text>
         //     </View>
         // </ImageBackground>
-        <FlatGrid
-                itemDimension={200}
+        <View style={styles.mainScreenView}>
+            <FlatGrid
+                itemDimension={20}
+                maxItemsPerRow={7}
                 spacing={10}
-                data={[1,2,3,4,5,"Hello World"]}
+                data={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]}
                 renderItem={({ item }) => (
-                    <View style={styles.gridView}>
+                    <View style={styles.calendarDayBox}>
                         <Text>{item}</Text>
                     </View>
                     )}
                 />
+        </View>
     );
 }
 
@@ -35,13 +38,13 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
-    loginButtonView: {
-        width: 180,
-        height: 70,
-        //backgroundColor: '#fc5f65'
+    mainScreenView: {
+        top: 25,
     },
-    gridView: {
-        backgroundColor: '#500000'
+    calendarDayBox: {
+        width: 40,
+        height: 40,
+        backgroundColor: '#ADD8E6',
     }
 })
 
