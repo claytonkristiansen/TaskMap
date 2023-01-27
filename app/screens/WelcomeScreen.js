@@ -1,52 +1,116 @@
 import React from 'react';
-import { ImageBackground, View, SafeAreaView, StyleSheet, Button, Alert, Text } from 'react-native';
+import { ImageBackground, View, SafeAreaView, StyleSheet, Button, Alert, Text, Dimensions} from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
+
+const styles = StyleSheet.create({
+    calendarGridView: {
+        alignItems: "center",
+        width: 350,
+    },
+    calendarRowView: {
+        flexDirection: "row",
+        marginBottom: 5,
+        alignItems: "center",
+    },
+    calendarCol: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    welcomeScreen: {
+        top: 50,
+        alignItems: "center",
+    },
+    calendarBox: {
+        width: 40,
+        height: 40,
+        borderWidth: 3,
+        borderColor: 'blue',
+        backgroundColor: '#ADD8E6',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    calendarCircle: {
+    }
+})
+
+
+const Col = ({children}) => {
+    return  (
+      <View style={styles.calendarCol}>{children}</View>
+    )
+}
+
+const Row = ({children}) => {
+    return (
+        <View style={styles.calendarRowView}>{children}</View>
+    )
+}
+
+const CalendarBox = () => {
+    return (
+        <View style={styles.calendarBox}>
+            <View width={10} height={10} borderRadius={5} backgroundColor={'blue'}></View>
+        </View>
+    )
+}
 
 function WelcomeScreen(props) {
 
     const handlePress = () => console.log("handlePress called")
-
+    
     return (
-        // <ImageBackground
-        //     style={styles.background}
-        //     source={require("../assets/beachbackground.png")}
-        // >
-            
-        //     <View style={styles.loginButtonView}>
-        //         <Text onPress={handlePress}>Hello</Text>
-        //     </View>
-        // </ImageBackground>
-        <View style={styles.mainScreenView}>
-            <FlatGrid
-                itemDimension={20}
-                maxItemsPerRow={7}
-                spacing={10}
-                data={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]}
-                renderItem={({ item }) => (
-                    <View style={styles.calendarDayBox}>
-                        <Text>{item}</Text>
-                    </View>
-                    )}
-                />
+        <View style={styles.welcomeScreen}>
+            <View style={styles.calendarGridView}>
+                <Row>
+                    <Col><CalendarBox></CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                </Row>
+                <Row>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                </Row>
+                <Row>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                </Row>
+                <Row>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                </Row>
+                <Row>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col><CalendarBox>Hello</CalendarBox></Col>
+                    <Col></Col>
+                    <Col></Col>
+                </Row>
+            </View>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-    mainScreenView: {
-        top: 25,
-    },
-    calendarDayBox: {
-        width: 40,
-        height: 40,
-        backgroundColor: '#ADD8E6',
-    }
-})
 
 export default WelcomeScreen;
 
